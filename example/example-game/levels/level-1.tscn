@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=4 uid="uid://cx08kjdhlkkhf"]
+
+[ext_resource type="TileSet" uid="uid://bmk1pp0cr0ba1" path="res://textures/level-tiles.tres" id="1_ig7tw"]
+[ext_resource type="Texture2D" path="res://textures/icon.svg" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://clt8jwgo5ofi6" path="res://scripts/player.gd" id="2_h2yge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(20, 30)
+
+[sub_resource type="GDScript" id="GDScript_3xsek"]
+script/source = "extends Label
+
+func _process(delta: float) -> void:
+	self.text = \"Level: \" + str(Global.level)
+"
+
+[node name="Control" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="map" type="TileMapLayer" parent="Node2D"]
+tile_map_data = PackedByteArray("AAD7/wwAAAAAAAAAAAD8/wwAAAAAAAAAAAD9/wwAAAAAAAAAAAD+/wwAAAAAAAAAAAD//wwAAAAAAAAAAAAAAAwAAAAAAAAAAAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAHAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAADAA0AAAAAAAAAAAACAA0AAAAAAAAAAAABAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD+/w0AAAAAAAAAAAD9/w0AAAAAAAAAAAD8/w0AAAAAAAAAAAD7/w0AAAAAAAAAAAD6/wwAAAAAAAAAAAD6/w0AAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAcAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAAMAAwAAAAAAAAAAAALAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAANAAwAAAAAAAAAAAANAAsAAAAAAAAAAAANAAoAAAAAAAAAAAAMAAkAAAAAAAAAAAALAAsAAAAAAAAAAAALAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAoAAAAAAAAAAAD4/wkAAAAAAAAAAAD4/woAAAAAAAAAAAD4/wsAAAAAAAAAAAD4/wwAAAAAAAAAAAD4/w0AAAAAAAAAAAD3/wkAAAAAAAAAAAD2/wkAAAAAAAAAAAD1/wkAAAAAAAAAAAD1/woAAAAAAAAAAAD1/wsAAAAAAAAAAAD1/wwAAAAAAAAAAAD1/w0AAAAAAAAAAAD2/w0AAAAAAAAAAAD3/w0AAAAAAAAAAAD6/wsAAAAAAAAAAAD7/wsAAAAAAAAAAAD8/wsAAAAAAAAAAADz/wgAAAAAAAAAAADy/wgAAAAAAAAAAADx/wgAAAAAAAAAAADx/wkAAAAAAAAAAADx/woAAAAAAAAAAADy/woAAAAAAAAAAADz/woAAAAAAAAAAADz/wkAAAAAAAAAAADt/wcAAAAAAAAAAADu/wcAAAAAAAAAAADv/wcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAAAAAAAAAAUAAcAAAAAAAAAAAAVAAcAAAAAAAAAAAAWAAcAAAAAAAAAAAAXAAcAAAAAAAAAAAAYAAcAAAAAAAAAAAAZAAcAAAAAAAAAAAAZAAYAAAAAAAAAAAAaAAYAAAAAAAAAAAAbAAUAAAAAAAAAAAAcAAUAAAAAAAAAAAAdAAUAAAAAAAAAAAAeAAQAAAAAAAAAAAAfAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAhAAQAAAAAAAAAAAAiAAQAAAAAAAAAAAAjAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAlAAQAAAAAAAAAAAA=")
+tile_set = ExtResource("1_ig7tw")
+
+[node name="player" type="CharacterBody2D" parent="Node2D"]
+script = ExtResource("2_h2yge")
+
+[node name="hitbox" type="CollisionShape2D" parent="Node2D/player"]
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="camera" type="Camera2D" parent="Node2D/player"]
+offset = Vector2(0, -40)
+zoom = Vector2(1.845, 1.845)
+position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/player"]
+scale = Vector2(0.171875, 0.21875)
+texture = ExtResource("2_0xm2m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "Level: "
+script = SubResource("GDScript_3xsek")
