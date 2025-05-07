@@ -132,12 +132,12 @@ shape = SubResource("RectangleShape2D_0xm2m")
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ivps1")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.613175
+frame_progress = 0.646485
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_onrkg")

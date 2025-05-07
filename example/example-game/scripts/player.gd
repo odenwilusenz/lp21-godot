@@ -3,7 +3,7 @@ extends CharacterBody2D
 var jumpForce = 250
 var speed = 100
 
-@onready var _animated_sprite = $AnimatedSprite2D
+@onready var _animated_sprite = $sprite
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

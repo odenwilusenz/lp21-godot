@@ -25,7 +25,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		distance = distance.abs()
 		
 		if distance.x > distance.y :
-			print("Got Hit")
+			Global.die()
 		else :
 			body.velocity.y = -150
 			queue_free()

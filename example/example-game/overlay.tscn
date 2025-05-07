@@ -5,7 +5,7 @@ script/source = "extends Button
 
 
 func _on_pressed() -> void:
-	Global.start_game()
+	Global.start_level()
 	pass # Replace with function body.
 "
 
