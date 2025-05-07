@@ -4,19 +4,28 @@ enum DIRECTION {LEFT, RIGHT}
 @export var direction: DIRECTION
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var _raycast = $RayCast2D
 
 func _physics_process(delta: float) -> void:
 	
 	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity")*delta
 	
+	if _raycast.is_colliding() :
+		velocity.y = -70
+		if direction == DIRECTION.LEFT:
+			direction = DIRECTION.RIGHT
+		else :
+			direction = DIRECTION.LEFT
+	
 	if direction == DIRECTION.LEFT:
 		_animated_sprite.scale = Vector2(1,1)
+		_raycast.target_position = Vector2(-8,0)
 		velocity.x = -50
 	else:
 		_animated_sprite.scale = Vector2(-1,1)
+		_raycast.target_position = Vector2(8,0)
 		velocity.x = 50	
 	move_and_slide()
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player" :
