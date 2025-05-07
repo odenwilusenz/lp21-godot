@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var gravity = 1000
 var jumpForce = 250
 var speed = 100
 
@@ -8,7 +7,7 @@ var speed = 100
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y += gravity*delta
+		velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity")*delta
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		_animated_sprite.play("jump")

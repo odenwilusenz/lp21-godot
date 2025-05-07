@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dgmr5b03csd5q" path="res://textures/characters.png" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(17, 21)
+size = Vector2(14, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_onrkg")
@@ -121,10 +121,11 @@ sky = SubResource("Sky_j3q3g")
 [sub_resource type="Compositor" id="Compositor_sweqy"]
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_onrkg")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 5.5)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="camera" type="Camera2D" parent="."]

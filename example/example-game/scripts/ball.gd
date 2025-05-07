@@ -1,0 +1,31 @@
+extends CharacterBody2D
+
+enum DIRECTION {LEFT, RIGHT}
+@export var direction: DIRECTION
+
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _physics_process(delta: float) -> void:
+	
+	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity")*delta
+	
+	if direction == DIRECTION.LEFT:
+		_animated_sprite.scale = Vector2(1,1)
+		velocity.x = -50
+	else:
+		_animated_sprite.scale = Vector2(-1,1)
+		velocity.x = 50	
+	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "player" :
+		var distance = self.global_position - body.global_position
+		distance.y -5
+		distance = distance.abs()
+		
+		if distance.x > distance.y :
+			print("Got Hit")
+		else :
+			body.velocity.y = -150
+			queue_free()
