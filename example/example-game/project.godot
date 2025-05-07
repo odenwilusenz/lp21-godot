@@ -18,6 +18,13 @@ config/features=PackedStringArray("4.4", "Mobile")
 
 Global="*res://scripts/global.gd"
 
+[display]
+
+window/size/viewport_width=1300
+window/size/viewport_height=800
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
+
 [input]
 
 right={
@@ -42,6 +49,7 @@ jump={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.372549, 0.803922, 0.894118, 1)

@@ -61,7 +61,6 @@ collision_layer = 0
 script = ExtResource("1_41u45")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_4wlf3")
 autoplay = "default"
 frame_progress = 0.933055
