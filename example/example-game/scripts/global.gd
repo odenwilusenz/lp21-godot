@@ -18,7 +18,7 @@ func _ready():
 	current_scene = root.get_child(-1)
 
 func start_game():
-	lives = 1
+	lives = 4
 	level = 1
 	start_level()
 

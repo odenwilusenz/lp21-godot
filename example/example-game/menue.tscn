@@ -35,7 +35,6 @@ alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 176
 text = "Play Game"
 script = SubResource("GDScript_73u5e")
 

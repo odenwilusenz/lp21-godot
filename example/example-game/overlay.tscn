@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqphugbyhdptp"]
+[gd_scene load_steps=5 format=3 uid="uid://dqphugbyhdptp"]
 
 [ext_resource type="Theme" uid="uid://wj4w1m7i1h0y" path="res://game-theme.tres" id="1_nv86q"]
 
@@ -18,6 +18,13 @@ func _process(delta: float) -> void:
 	self.text = \"Level: \" + str(Global.level)
 "
 
+[sub_resource type="GDScript" id="GDScript_nv86q"]
+script/source = "extends Label
+
+func _process(delta: float) -> void:
+	self.text = \"Lives: \" + str(Global.lives)
+"
+
 [node name="Overlay" type="CanvasLayer"]
 
 [node name="Control" type="Control" parent="."]
@@ -30,6 +37,7 @@ grow_vertical = 2
 theme = ExtResource("1_nv86q")
 
 [node name="Button" type="Button" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -40,11 +48,25 @@ grow_horizontal = 0
 text = "Reload Level"
 script = SubResource("GDScript_8hk4l")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="BoxContainer" type="BoxContainer" parent="Control"]
 layout_mode = 1
-offset_right = 105.0
-offset_bottom = 48.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.0
+offset_right = 87.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_constants/separation = 32
+
+[node name="Level" type="Label" parent="Control/BoxContainer"]
+layout_mode = 2
 text = "Level:"
 script = SubResource("GDScript_3xsek")
+
+[node name="Lives" type="Label" parent="Control/BoxContainer"]
+layout_mode = 2
+text = "Lives:"
+script = SubResource("GDScript_nv86q")
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
