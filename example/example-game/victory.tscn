@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmepal74wwpx0"]
+[gd_scene load_steps=3 format=3 uid="uid://cmepal74wwpx0"]
+
+[ext_resource type="Theme" uid="uid://wj4w1m7i1h0y" path="res://game-theme.tres" id="1_7bnjr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_c7yh7"]
-font_size = 56
+font_size = 136
+outline_size = 55
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7bnjr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -18,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.270222, 0.270222, 0.270222, 1)
+color = Color(0.235294, 0.498039, 0.592157, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(450, 0)

@@ -5,7 +5,7 @@ const death = "res://death.tscn"
 const gameover = "res://gameover.tscn"
 const victory = "res://victory.tscn"
 
-const levels = ["res://levels/template.tscn"]
+const levels = ["res://levels/level-01.tscn"]
 
 var level
 var lives
@@ -32,10 +32,11 @@ func end_level():
 	level = level + 1
 	
 	if level > levels.size() :
-		print("all levels Played")
-	
-	load_scene(victory)
-	delay_call(3, start_level)
+		load_scene(victory)
+		delay_call(3, end_game)
+	else:
+		load_scene(victory)
+		delay_call(3, start_level)
 
 func die():
 	lives = lives - 1

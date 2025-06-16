@@ -65,6 +65,13 @@ sprite_frames = SubResource("SpriteFrames_4wlf3")
 autoplay = "default"
 frame_progress = 0.933055
 
+[node name="raycast-floor" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(-8, 0)
+target_position = Vector2(0, 81)
+
+[node name="raycast-front" type="RayCast2D" parent="AnimatedSprite2D"]
+target_position = Vector2(-9, 0)
+
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_hgol0")
@@ -76,8 +83,5 @@ collision_mask = 2
 [node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_hgol0")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(-18, 0)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

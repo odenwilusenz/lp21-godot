@@ -1,14 +1,15 @@
-[gd_scene load_steps=26 format=4 uid="uid://c7ittw88lq726"]
+[gd_scene load_steps=20 format=4 uid="uid://c7ittw88lq726"]
 
 [ext_resource type="TileSet" uid="uid://bmk1pp0cr0ba1" path="res://textures/level-tiles.tres" id="1_uho38"]
 [ext_resource type="PackedScene" uid="uid://b1amn0vjuav58" path="res://player.tscn" id="2_6aolc"]
 [ext_resource type="PackedScene" uid="uid://dqphugbyhdptp" path="res://overlay.tscn" id="3_uho38"]
 [ext_resource type="Texture2D" uid="uid://cvl1b8xcnc84k" path="res://textures/background.png" id="4_ua8a3"]
 [ext_resource type="Texture2D" uid="uid://dr55fi87qb461" path="res://textures/clouds.png" id="5_1t8dn"]
-[ext_resource type="Texture2D" uid="uid://bfe0gxvu0fnfo" path="res://textures/enemies.png" id="7_mab6s"]
 [ext_resource type="PackedScene" uid="uid://cb7otgs0io5om" path="res://elements/spikes.tscn" id="7_wcp7a"]
 [ext_resource type="Texture2D" uid="uid://cfrvtc7avyl7d" path="res://textures/elements.png" id="8_7s4wc"]
+[ext_resource type="PackedScene" uid="uid://c2fbruimsl6f7" path="res://elements/door.tscn" id="8_8hwiw"]
 [ext_resource type="PackedScene" uid="uid://c3gan500vkjk4" path="res://elements/ball.tscn" id="8_wcp7a"]
+[ext_resource type="PackedScene" uid="uid://bptmrjlip0c7f" path="res://elements/bird.tscn" id="10_8hwiw"]
 
 [sub_resource type="GDScript" id="GDScript_wcp7a"]
 script/source = "extends Area2D
@@ -21,56 +22,6 @@ func _on_body_entered(body: Node2D) -> void:
 "
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wcp7a"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fyaw7"]
-atlas = ExtResource("7_mab6s")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ufbvj"]
-atlas = ExtResource("7_mab6s")
-region = Rect2(16, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ng8ju"]
-atlas = ExtResource("7_mab6s")
-region = Rect2(32, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s846p"]
-atlas = ExtResource("7_mab6s")
-region = Rect2(48, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mfgjs"]
-atlas = ExtResource("7_mab6s")
-region = Rect2(80, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v52kv"]
-atlas = ExtResource("7_mab6s")
-region = Rect2(96, 48, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_68md7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fyaw7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ufbvj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ng8ju")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s846p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mfgjs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v52kv")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3mce"]
 atlas = ExtResource("8_7s4wc")
@@ -191,9 +142,9 @@ motion_scale = Vector2(1.2, 1)
 z_index = 1000
 texture_filter = 1
 texture_repeat = 2
-offset_left = -2880.0
+offset_left = -2882.0
 offset_top = -110.0
-offset_right = 2895.0
+offset_right = 2893.0
 offset_bottom = 34.0
 texture = ExtResource("5_1t8dn")
 stretch_mode = 1
@@ -203,17 +154,14 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAD9/wIAAQADAAIAAAD+/wIAAQABAAAAAAD//wIAAQABAAAAAAAAAAIAAQABAAAAAAABAAIAAQABAAAAAAACAAIAAQABAAAAAAADAAIAAQABAAAAAAAEAAIAAQAEAAIAAAAFAAIAAQAEAAIAAAD8/wIAAQAAAAEAAAAFAAMAAQABAAEAAAD8/wMAAQAAAAIAAAD9/wMAAQAFAAAAAAD+/wMAAQADAAAAAAD//wMAAQAEAAAAAAAAAAMAAQAEAAAAAAABAAMAAQAEAAAAAAACAAMAAQAFAAAAAAADAAMAAQABAAEAAAAEAAMAAQABAAEAAAAGAAEAAQAAAAAAAAAHAAEAAQABAAAAAAAGAAIAAQAFAAIAAAAGAAMAAQABAAEAAAAHAAMAAQABAAEAAAAHAAIAAQABAAEAAAAJAAMAAQADAAAAAAD9/wQAAQAFAAEAAAD+/wQAAQADAAEAAAACAAQAAQAFAAEAAAADAAQAAQABAAEAAAAEAAQAAQABAAEAAAAFAAQAAQABAAEAAAAGAAQAAQABAAEAAAAHAAQAAQABAAEAAAAIAAQAAQABAAEAAAAJAAQAAQACAAEAAAABAAYAAQAEAAAAAAAAAAYAAQAEAAAAAAD//wYAAQAEAAAAAAACAAYAAQAEAAAAAAADAAYAAQAEAAAAAAAEAAYAAQAEAAAAAAAFAAYAAQAEAAAAAAAGAAYAAQACAAIAAAABAAUAAQAEAAIAAAACAAUAAQAFAAIAAAADAAUAAQABAAEAAAAEAAUAAQABAAEAAAAFAAUAAQABAAEAAAAGAAUAAQADAAAAAAAHAAUAAQAEAAAAAAAIAAUAAQAEAAAAAAAJAAUAAQACAAIAAAAAAAUAAQAEAAIAAAD//wUAAQAEAAIAAAD+/wUAAQADAAIAAAD9/wUAAQAAAAIAAAD+/wYAAQAAAAIAAAAIAAMAAQABAAEAAAAIAAIAAQABAAEAAAAIAAEAAQAEAAIAAAAJAAIAAQABAAEAAAAKAAIAAQACAAEAAAAKAAEAAQADAAAAAAALAAAAAQABAAAAAAAKAP7/AQANAAYAAAAJAP//AQAMAAcAAAAJAAAAAQAAAAAAAAAKAP//AQANAAcAAAAKAAAAAQABAAAAAAAJAP7/AQAMAAYAAAALAAEAAQACAAIAAAAKAAMAAQACAAIAAAAJAAEAAQAFAAIAAADg////AQAAAAAAAADh////AQABAAAAAADi////AQABAAAAAADm////AQABAAEAAADn////AQADAAIAAADo////AQABAAAAAADp////AQABAAAAAADj//7/AQAAAAAAAADk//7/AQABAAAAAADl//7/AQABAAAAAADm//7/AQABAAAAAADn//7/AQACAAAAAADl//z/AQAMAAYAAADm//z/AQANAAYAAADl//3/AQAMAAcAAADm//3/AQANAAcAAADh/wAAAQABAAIAAADg/wAAAQAAAAIAAADi/wAAAQAFAAAAAADj/wAAAQABAAEAAADk/wAAAQABAAEAAADl/wAAAQABAAEAAADm/wAAAQABAAEAAADn/wAAAQABAAEAAADm/wEAAQABAAEAAADl/wEAAQABAAEAAADk/wEAAQABAAEAAADj/wEAAQAFAAAAAADi/wEAAQAAAAIAAADo/wAAAQABAAEAAADp/wAAAQABAAEAAADq/wAAAQABAAEAAADr/wAAAQACAAIAAADp/wEAAQABAAIAAADn/wEAAQABAAEAAADq////AQABAAAAAADr////AQACAAAAAADn/wIAAQABAAIAAADm/wIAAQABAAIAAADl/wIAAQABAAEAAADk/wIAAQABAAIAAADj/wIAAQAAAAIAAADl/wMAAQADAAUAAADo/wIAAQACAAIAAADu/wAAAQAEAAMAAADw/wEAAQAAAAMAAADx/wEAAQABAAMAAADy/wEAAQACAAMAAAD2/wIAAQAAAAAAAAD3/wIAAQABAAAAAAD4/wIAAQABAAAAAAD4/wMAAQABAAEAAAD5/wIAAQACAAAAAAD5/wMAAQACAAEAAAD4/wQAAQABAAIAAAD5/wQAAQACAAIAAAD3/wQAAQABAAIAAAD3/wMAAQABAAEAAAD2/wMAAQAAAAEAAAD2/wQAAQAAAAIAAADj////AQAFAAIAAADk////AQABAAEAAADl////AQABAAEAAAAPAAAAAQAGAAMAAAAQAAAAAQAHAAMAAAARAAAAAQAHAAMAAAASAAAAAQAHAAMAAAATAAAAAQAIAAMAAAAWAP//AQAGAAAAAAAXAP//AQAHAAAAAAAYAP//AQAHAAAAAAAZAP//AQAIAAAAAAAWAAAAAQAGAAEAAAAZAAAAAQAIAAEAAAAXAAAAAQAHAAEAAAAYAAAAAQAHAAEAAAAWAAEAAQAGAAIAAAAXAAEAAQAHAAIAAAAYAAEAAQAHAAIAAAAZAAEAAQAIAAIAAADo/wEAAQADAAAAAADq/wEAAQACAAIAAAAXAP7/AQAKAAcAAAAYAP3/AQALAAYAAAAYAP7/AQALAAcAAAD9/wEAAQACAAAAAAD8/wEAAQAAAAAAAAABAAQAAQAIAAcAAAA=")
 tile_set = ExtResource("1_uho38")
 
-[node name="bird" type="AnimatedSprite2D" parent="map"]
-texture_filter = 1
-position = Vector2(293, -8)
-sprite_frames = SubResource("SpriteFrames_68md7")
-autoplay = "default"
-frame_progress = 0.452911
+[node name="ball2" parent="map" instance=ExtResource("10_8hwiw")]
+position = Vector2(313, -8)
 
 [node name="spikes" parent="map" instance=ExtResource("7_wcp7a")]
 position = Vector2(-248, 8)
 
 [node name="coin" type="AnimatedSprite2D" parent="map"]
+visible = false
 texture_filter = 1
 position = Vector2(-376, -24)
 sprite_frames = SubResource("SpriteFrames_cg25y")
@@ -221,6 +169,7 @@ autoplay = "default"
 frame_progress = 0.562697
 
 [node name="key" type="AnimatedSprite2D" parent="map"]
+visible = false
 texture_filter = 1
 position = Vector2(56, 18)
 sprite_frames = SubResource("SpriteFrames_4b4of")
@@ -228,7 +177,11 @@ sprite_frames = SubResource("SpriteFrames_4b4of")
 [node name="ball" parent="map" instance=ExtResource("8_wcp7a")]
 position = Vector2(185, -8)
 
+[node name="door" parent="map" instance=ExtResource("8_8hwiw")]
+position = Vector2(408, -32)
+
 [node name="player" parent="." instance=ExtResource("2_6aolc")]
+position = Vector2(-37, -5)
 
 [node name="Overlay" parent="." instance=ExtResource("3_uho38")]
 
