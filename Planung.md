@@ -1,4 +1,20 @@
 # Planung
+## Lektionsstruktur
+1. Vorstellung Tagesthema
+2. Einrichten Arbeitsplätze
+3. Schrittweise Durchführung & Selbständiges Arbeiten
+4. Rekapitulation
+5. Abbauen Arbeitsplätze
+6. Happen / Mümpfeli
+
+| Zeit | Dauer | Aktivität                        | Lehrer        | Schüler           | Notizen |
+| ---- | ----- | -------------------------------- | ------------- | ----------------- | ------- |
+| 1500 | 10'   | Verschieben von Bahnhof zu Space | -             | Laufen zu Space   |         |
+| 1510 | 50'   | Lektion 1                        |               |                   |         |
+| 1600 | 10'   | Pause                            |               |                   |         |
+| 1610 | 55'   | Lektion 2                        |               |                   |         |
+| 1715 | 15'   | Ende Unterricht                  | verabschieden | Laufen zu Bahnhof |         |
+| 1727 |       | Abfahrt Eisenbahn                |               |                   |         |
 ## Einheiten
 ### Grundlagen
  - Spieleaufbau kennenlernen
