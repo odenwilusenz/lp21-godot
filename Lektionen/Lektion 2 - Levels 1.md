@@ -25,10 +25,4 @@
 ## Material
 - 4GB USB Stick pro person
 
-## Lektionsstruktur
-1. Vorstellung Tagesthema
-2. Einrichten Arbeitsplätze
-3. Schrittweise Durchführung & Selbständiges Arbeiten
-4. Rekapitulation
-5. Abbauen Arbeitsplätze
-6. Happen / Mümpfeli
+## Kompetenzen

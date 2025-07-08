@@ -34,6 +34,8 @@
 - Projektaufteilung in verschiedene Szenen
 - Spielersteuerung Erstellen
 - GD-Script einführung
+
+FS1E.5.E.1
 ## Spieler 2
 - Animierter Charakter erstellen
 - Annimationen in GD Script steuern

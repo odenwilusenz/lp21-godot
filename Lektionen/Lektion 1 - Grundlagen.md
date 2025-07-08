@@ -1,4 +1,4 @@
- ## Inhalt
+## Inhalt
  - Spieleaufbau kennenlernen
  - Mit wortschatz vertraut machen
  - Motivieren und Inspirieren
@@ -29,4 +29,4 @@
 - Edding
 
 ## Kompetenzen
-- 
+- TTG.1.A.1
