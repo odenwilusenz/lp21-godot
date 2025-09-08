@@ -27,7 +27,6 @@
 - Tilesets erstellen
 	- Grafik aufspalten
 	- Kollisionen Erstellen
-- Einführung von Füllerarbeit mit Zeichnen
 ## Spieler 1
 - Theoretische und Praktische Anwendung von Kräftevektoren
 - Praktische Anwendung von Koordinatensystemen
@@ -39,6 +38,7 @@ FS1E.5.E.1
 ## Spieler 2
 - Animierter Charakter erstellen
 - Annimationen in GD Script steuern
+- Einführung von Füllerarbeit mit Zeichnen
 ## Menues 1
 - Theme erstellen
 - Hauptmenue erstellen
